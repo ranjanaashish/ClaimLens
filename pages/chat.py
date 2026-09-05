@@ -54,7 +54,7 @@ def _init():
         "pending_image":       None,
         "theme":               "dark",
         "vlm_backend":         "gemini",
-        "gemini_api_key":      os.getenv("GEMINI_API_KEY", ""),
+        "gemini_api_key":      "",  # Kept empty in session state; host secret is used on backend without DOM exposure
         "gemini_vlm_model":    "gemini-3.6-flash",
         "openrouter_vlm_key":  "",
         "openrouter_vlm_model": "meta-llama/llama-3.2-11b-vision-instruct:free",
@@ -63,7 +63,7 @@ def _init():
         "ollama_vlm_model":    "llava",
         "llm_provider":        "gemini",
         "llm_model":           "gemini-3.6-flash",
-        "llm_api_key":         os.getenv("GEMINI_API_KEY", ""),
+        "llm_api_key":         "",  # Kept empty in session state; host secret is used on backend without DOM exposure
         "ollama_base_url":     "http://localhost:11434",
         "vlm_rest_endpoint":   "http://localhost:8000/assess",
         "enable_rag":          True,
@@ -179,8 +179,11 @@ with st.expander(_settings_label(), expanded=st.session_state._settings_open):
         vlm_models = _VLM_BACKENDS[vlm][1]
 
         if vlm == "gemini":
+            has_server_key = bool(os.getenv("GEMINI_API_KEY", "").strip()) or (hasattr(st, "secrets") and bool(st.secrets.get("GEMINI_API_KEY")))
+            gk_ph = "Host key active — leave blank or enter custom key" if has_server_key else "AIzaSy…"
+            gk_help = "A host key is configured securely on the server. Enter your personal key only if you wish to override it." if has_server_key else "Get a free key at aistudio.google.com"
             gk = st.text_input("Gemini API Key", value=st.session_state.gemini_api_key,
-                                type="password", placeholder="AIzaSy…", key="_set_gk")
+                                type="password", placeholder=gk_ph, help=gk_help, key="_set_gk")
             st.session_state.gemini_api_key = gk
             if st.session_state.llm_provider == "gemini" and gk and not st.session_state.llm_api_key:
                 st.session_state.llm_api_key = gk
@@ -188,7 +191,10 @@ with st.expander(_settings_label(), expanded=st.session_state._settings_open):
             idx_vm = vlm_models.index(cur_vm) if cur_vm in vlm_models else 0
             v_chosen = st.selectbox("Vision Model", vlm_models, index=idx_vm, key="_set_vlm_model")
             st.session_state.gemini_vlm_model = v_chosen
-            st.caption("Free tier — 15 RPM — aistudio.google.com")
+            if has_server_key and not gk:
+                st.caption("Status: Host API Key Active (Secure server secret)")
+            else:
+                st.caption("Free tier — 15 RPM — aistudio.google.com")
 
         elif vlm == "openrouter":
             ork = st.text_input("OpenRouter API Key",
@@ -240,14 +246,27 @@ with st.expander(_settings_label(), expanded=st.session_state._settings_open):
         st.session_state.llm_model = mdl
 
         if prov in ("gemini", "openrouter", "openai", "anthropic"):
-            default_key = st.session_state.llm_api_key
-            if prov == "gemini" and not default_key and st.session_state.gemini_api_key:
-                default_key = st.session_state.gemini_api_key
-            lk = st.text_input(f"{prov.capitalize()} API Key", value=default_key,
-                                type="password", placeholder="API key…", key="_set_lk")
-            st.session_state.llm_api_key = lk
+            has_host = False
             if prov == "gemini":
+                has_host = bool(os.getenv("GEMINI_API_KEY", "").strip()) or (hasattr(st, "secrets") and bool(st.secrets.get("GEMINI_API_KEY")))
+            elif prov == "openrouter":
+                has_host = bool(os.getenv("OPENROUTER_API_KEY", "").strip()) or (hasattr(st, "secrets") and bool(st.secrets.get("OPENROUTER_API_KEY")))
+            elif prov == "openai":
+                has_host = bool(os.getenv("OPENAI_API_KEY", "").strip()) or (hasattr(st, "secrets") and bool(st.secrets.get("OPENAI_API_KEY")))
+
+            lk_ph = "Host key active — leave blank or enter custom key" if has_host else "API key…"
+            lk = st.text_input(
+                f"{prov.capitalize()} API Key",
+                value=st.session_state.llm_api_key,
+                type="password",
+                placeholder=lk_ph,
+                key="_set_lk",
+            )
+            st.session_state.llm_api_key = lk
+            if prov == "gemini" and lk and not st.session_state.gemini_api_key:
                 st.session_state.gemini_api_key = lk
+            if has_host and not lk:
+                st.caption(f"Status: Host {prov.capitalize()} Key Active (Secure server secret)")
         elif prov == "ollama":
             ob2 = st.text_input("Ollama URL", value=st.session_state.ollama_base_url, key="_set_ob")
             st.session_state.ollama_base_url = ob2
@@ -300,11 +319,16 @@ with st.expander(_settings_label(), expanded=st.session_state._settings_open):
 # ---------------------------------------------------------------------------
 
 _missing_keys = []
-if (st.session_state.vlm_backend == "gemini" or st.session_state.llm_provider == "gemini") and not st.session_state.gemini_api_key:
+_has_gemini = bool(st.session_state.gemini_api_key.strip()) or bool(st.session_state.llm_api_key.strip()) or bool(os.getenv("GEMINI_API_KEY", "").strip()) or (hasattr(st, "secrets") and bool(st.secrets.get("GEMINI_API_KEY")))
+if (st.session_state.vlm_backend == "gemini" or st.session_state.llm_provider == "gemini") and not _has_gemini:
     _missing_keys.append("Gemini")
-if (st.session_state.vlm_backend == "openrouter" or st.session_state.llm_provider == "openrouter") and not (st.session_state.get("openrouter_vlm_key") or st.session_state.llm_api_key):
+
+_has_or = bool(st.session_state.get("openrouter_vlm_key", "").strip()) or bool(st.session_state.llm_api_key.strip()) or bool(os.getenv("OPENROUTER_API_KEY", "").strip()) or (hasattr(st, "secrets") and bool(st.secrets.get("OPENROUTER_API_KEY")))
+if (st.session_state.vlm_backend == "openrouter" or st.session_state.llm_provider == "openrouter") and not _has_or:
     _missing_keys.append("OpenRouter")
-if (st.session_state.vlm_backend == "openai" or st.session_state.llm_provider == "openai") and not (st.session_state.get("openai_vlm_key") or st.session_state.llm_api_key):
+
+_has_oa = bool(st.session_state.get("openai_vlm_key", "").strip()) or bool(st.session_state.llm_api_key.strip()) or bool(os.getenv("OPENAI_API_KEY", "").strip()) or (hasattr(st, "secrets") and bool(st.secrets.get("OPENAI_API_KEY")))
+if (st.session_state.vlm_backend == "openai" or st.session_state.llm_provider == "openai") and not _has_oa:
     _missing_keys.append("OpenAI")
 
 if _missing_keys:

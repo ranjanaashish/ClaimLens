@@ -7,11 +7,11 @@
 [![Fine-Tuning](https://img.shields.io/badge/DPO%20%2F%20SFT-Training%20Pipeline-purple.svg)](https://huggingface.co/docs/trl)
 [![CI](https://github.com/ranjanaashish/ClaimLens/actions/workflows/ci.yml/badge.svg)](https://github.com/ranjanaashish/ClaimLens/actions)
 [![Docker](https://img.shields.io/badge/Docker-Ready-2496ED.svg?logo=docker&logoColor=white)](Dockerfile)
-[![Deploy on Streamlit](https://static.streamlit.io/badges/streamlit_badge_black_white.svg)](https://share.streamlit.io/deploy?repository=ranjanaashish/ClaimLens&branch=main&mainModule=streamlit_app.py)
-[![Live Demo](https://img.shields.io/badge/Live%20Demo-Online%20Now-success?logo=cloudflare)](https://coleman-shareware-funk-decade.trycloudflare.com)
+[![Streamlit Cloud](https://static.streamlit.io/badges/streamlit_badge_black_white.svg)](https://share.streamlit.io/)
+[![Deploy on Streamlit](https://img.shields.io/badge/Deploy-Streamlit%20Cloud-FF4B4B?logo=streamlit&logoColor=white)](https://share.streamlit.io/deploy?repository=ranjanaashish/ClaimLens&branch=main&mainModule=streamlit_app.py)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
 
-> **Live Instance**: Try ClaimLens immediately at **[https://coleman-shareware-funk-decade.trycloudflare.com](https://coleman-shareware-funk-decade.trycloudflare.com)** or launch 1-click on Streamlit Cloud via **[Deploy to Streamlit Cloud](https://share.streamlit.io/deploy?repository=ranjanaashish/ClaimLens&branch=main&mainModule=streamlit_app.py)**.
+> **Live Deployment**: ClaimLens is deployed on **Streamlit Community Cloud** with zero-leak server-side secrets encryption. Replicate or launch your own instance with 1-click via **[Deploy to Streamlit Cloud](https://share.streamlit.io/deploy?repository=ranjanaashish/ClaimLens&branch=main&mainModule=streamlit_app.py)**.
 
 ClaimLens is an enterprise-grade multimodal artificial intelligence platform designed for automated visual damage evaluation, agricultural and crop health inspection, property loss estimation, and policy-grounded insurance adjudication. Built on state-of-the-art Vision-Language Models (VLMs) and Retrieval-Augmented Generation (RAG), ClaimLens transforms unstructured visual inspections into verified, actionable engineering assessments.
 
@@ -213,6 +213,8 @@ Deploy directly from your GitHub repository with zero infrastructure management:
    GEMINI_VLM_MODEL = "gemini-3.6-flash"
    ```
 4. Click **Deploy!** — Streamlit Cloud will build from `requirements.txt` and launch your instance with `.streamlit/config.toml` settings.
+
+> **Security & Credential Isolation**: Server API keys configured in Streamlit Cloud Secrets are executed strictly server-side. They are never rendered into HTML input elements, DOM nodes, or WebSocket client state. Visitors to your public app can interact seamlessly using the server-configured credentials, or optionally supply their own personal keys in the Settings modal without exposing host secrets.
 
 ### 2. Docker Container Deployment
 

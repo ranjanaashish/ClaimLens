@@ -388,19 +388,22 @@ def chat(
         return answer
 
     if provider == "gemini":
-        return _chat_gemini(messages, model, api_key or "", temperature, max_tokens, stream)
+        resolved_key = (api_key or "").strip() or os.getenv("GEMINI_API_KEY", "")
+        return _chat_gemini(messages, model, resolved_key, temperature, max_tokens, stream)
 
     if provider == "openrouter":
+        resolved_key = (api_key or "").strip() or os.getenv("OPENROUTER_API_KEY", "")
         return _chat_openai_compat(
-            messages, model, api_key or "",
+            messages, model, resolved_key,
             base_url="https://openrouter.ai/api/v1",
             temperature=temperature, max_tokens=max_tokens, stream=stream,
             extra_headers={"HTTP-Referer": "https://claimlens.local", "X-Title": "ClaimLens"},
         )
 
     if provider == "openai":
+        resolved_key = (api_key or "").strip() or os.getenv("OPENAI_API_KEY", "")
         return _chat_openai_compat(
-            messages, model, api_key or "",
+            messages, model, resolved_key,
             base_url=None,
             temperature=temperature, max_tokens=max_tokens, stream=stream,
         )
@@ -409,7 +412,8 @@ def chat(
         return _chat_ollama(messages, model, ollama_base_url, temperature, stream)
 
     if provider == "anthropic":
-        return _chat_anthropic(messages, model, api_key or "", temperature, max_tokens, stream)
+        resolved_key = (api_key or "").strip() or os.getenv("ANTHROPIC_API_KEY", "")
+        return _chat_anthropic(messages, model, resolved_key, temperature, max_tokens, stream)
 
     raise ValueError(f"Unknown provider: {provider!r}. Choose from: {list(PROVIDER_REGISTRY)}")
 

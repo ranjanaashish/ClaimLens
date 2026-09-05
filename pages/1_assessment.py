@@ -81,15 +81,19 @@ with st.sidebar:
     st.session_state.vlm_backend = vlm_backend
 
     if vlm_backend == "gemini":
+        has_host_key = bool(os.getenv("GEMINI_API_KEY", "").strip()) or (hasattr(st, "secrets") and bool(st.secrets.get("GEMINI_API_KEY")))
         gemini_key = st.text_input(
             "Gemini API Key",
             value=st.session_state.gemini_api_key,
             type="password",
-            placeholder="AIza…",
-            help="Get a free key at aistudio.google.com",
+            placeholder="Host key active — enter key to override" if has_host_key else "AIza…",
+            help="Server has a secure host key configured. Enter a personal key only to override." if has_host_key else "Get a free key at aistudio.google.com",
         )
         st.session_state.gemini_api_key = gemini_key
-        st.caption("Free tier: 15 RPM / 1M tokens/day")
+        if has_host_key and not gemini_key:
+            st.caption("Status: Host API Key Active (Secure server secret)")
+        else:
+            st.caption("Free tier: 15 RPM / 1M tokens/day")
 
     elif vlm_backend == "rest":
         rest_ep = st.text_input(

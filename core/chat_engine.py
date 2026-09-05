@@ -42,6 +42,14 @@ def _has_keywords(text: str, kw_set: set[str]) -> bool:
     return any(kw in text_lower for kw in kw_set)
 
 
+def _sanitize_error(text: str) -> str:
+    """Scrub sensitive API key patterns from error strings."""
+    import re
+    cleaned = str(text)
+    cleaned = re.sub(r'(?:AQ\.[a-zA-Z0-9_-]{15,}|AIzaSy[a-zA-Z0-9_-]{20,}|sk-[a-zA-Z0-9_-]{20,})', '[REDACTED_API_KEY]', cleaned)
+    return cleaned
+
+
 # ---------------------------------------------------------------------------
 # VLM assessment turn
 # ---------------------------------------------------------------------------
@@ -81,18 +89,18 @@ def _run_vlm(
             user_prompt=prompt,
         )
     except Exception as exc:
-        err_msg = str(exc)
-        if "429" in err_msg or "quota" in err_msg.lower():
+        safe_exc = _sanitize_error(str(exc))
+        if "429" in safe_exc or "quota" in safe_exc.lower():
             hint = (
                 "Google Gemini free-tier quota reached for this model. "
-                "In ⚙ Settings, try switching the Vision Model to **gemini-2.0-flash** or **gemini-1.5-flash-8b**, "
-                "or switch backend to **Stub**."
+                "In Settings, try switching the Vision Model to another flash model "
+                "or switch backend to Stub."
             )
         else:
-            hint = "Try switching to Stub mode or checking your API key."
+            hint = "Try switching to Stub mode or checking your API key in Settings."
         return ChatResponse(
             type="error",
-            error_msg=f"Assessment failed: {exc}. {hint}",
+            error_msg=f"Assessment failed: {safe_exc}. {hint}",
         )
 
     # Annotate image with bounding boxes
@@ -247,11 +255,12 @@ def _run_llm(
             text = str(resp)
 
     except Exception as exc:
+        safe_exc = _sanitize_error(str(exc))
         text = (
             f"I couldn't reach the LLM ({provider}). "
-            f"Error: {exc}\n\n"
+            f"Error: {safe_exc}\n\n"
             "**Try switching to Stub mode** in the settings panel, "
-            "or check your API key."
+            "or check your API key in Settings."
         )
 
     return ChatResponse(

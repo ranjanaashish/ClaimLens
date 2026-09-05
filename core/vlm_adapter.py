@@ -520,12 +520,14 @@ def _gemini_assess(
                 "too many requests", "exceeded your current quota",
             ])
             if is_recoverable:
-                print(f"[Gemini] Model '{m_name}' unavailable or quota exceeded ({exc}), falling back to next model...")
+                err_clean = re.sub(r'(?:AQ\.[a-zA-Z0-9_-]{15,}|AIzaSy[a-zA-Z0-9_-]{20,}|sk-[a-zA-Z0-9_-]{20,})', '[REDACTED]', str(exc))
+                print(f"[Gemini] Model '{m_name}' unavailable or quota exceeded ({err_clean}), falling back to next model...")
                 continue
             raise exc
 
     if response is None:
-        raise RuntimeError(f"All Gemini models failed: {last_exc}") from last_exc
+        err_clean = re.sub(r'(?:AQ\.[a-zA-Z0-9_-]{15,}|AIzaSy[a-zA-Z0-9_-]{20,}|sk-[a-zA-Z0-9_-]{20,})', '[REDACTED]', str(last_exc))
+        raise RuntimeError(f"All Gemini models failed: {err_clean}") from last_exc
 
     raw = getattr(response, "text", "") or ""
     data = _safe_parse_json(raw)

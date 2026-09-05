@@ -60,7 +60,7 @@ defaults = {
     "pending_image": None,
     "theme":             "dark",
     "vlm_backend":       os.getenv("VLM_BACKEND", "gemini"),
-    "gemini_api_key":    os.getenv("GEMINI_API_KEY", ""),
+    "gemini_api_key":    "",  # Keep blank in session state; host secret is used on backend without DOM exposure
     "gemini_vlm_model":  os.getenv("GEMINI_VLM_MODEL", "gemini-3.6-flash"),
     "openrouter_vlm_key": "",
     "openrouter_vlm_model": "meta-llama/llama-3.2-11b-vision-instruct:free",
@@ -70,7 +70,7 @@ defaults = {
     "vlm_rest_endpoint": os.getenv("VLM_REST_ENDPOINT", "http://localhost:8000/assess"),
     "llm_provider":      os.getenv("LLM_PROVIDER", "gemini"),
     "llm_model":         os.getenv("LLM_MODEL", "gemini-3.6-flash"),
-    "llm_api_key":       os.getenv("GEMINI_API_KEY", ""),
+    "llm_api_key":       "",  # Keep blank in session state; host secret is used on backend without DOM exposure
     "ollama_base_url":   "http://localhost:11434",
     "chat_history":      [],
     "last_assessment":   None,

@@ -6,7 +6,7 @@ import json
 import sys
 from pathlib import Path
 
-ROOT = Path(r"C:\Users\Aashish\.gemini\antigravity\scratch\vehicle-damage-dashboard")
+ROOT = Path(__file__).resolve().parent.parent
 sys.path.insert(0, str(ROOT))
 
 from core import feedback_store
