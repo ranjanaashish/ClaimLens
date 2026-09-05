@@ -7,7 +7,10 @@
 [![Fine-Tuning](https://img.shields.io/badge/DPO%20%2F%20SFT-Training%20Pipeline-purple.svg)](https://huggingface.co/docs/trl)
 [![CI](https://github.com/ranjanaashish/ClaimLens/actions/workflows/ci.yml/badge.svg)](https://github.com/ranjanaashish/ClaimLens/actions)
 [![Docker](https://img.shields.io/badge/Docker-Ready-2496ED.svg?logo=docker&logoColor=white)](Dockerfile)
+[![Streamlit App](https://static.streamlit.io/badges/streamlit_badge_black_white.svg)](https://share.streamlit.io/ranjanaashish/claimlens/main/streamlit_app.py)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
+
+> **Live Web Application**: Open and use ClaimLens directly in your browser on **[Streamlit Community Cloud](https://share.streamlit.io/ranjanaashish/claimlens/main/streamlit_app.py)**.
 
 ClaimLens is an enterprise-grade multimodal artificial intelligence platform designed for automated visual damage evaluation, agricultural and crop health inspection, property loss estimation, and policy-grounded insurance adjudication. Built on state-of-the-art Vision-Language Models (VLMs) and Retrieval-Augmented Generation (RAG), ClaimLens transforms unstructured visual inspections into verified, actionable engineering assessments.
 
