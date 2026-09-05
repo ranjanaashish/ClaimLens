@@ -1,0 +1,97 @@
+INSURANCE POLICY CLAUSES — VEHICLE DAMAGE CLAIMS
+Policy Document Reference: MOTOR-2024-STD
+Effective: 1 January 2024
+
+CLAUSE 1 — DEFINITIONS
+"ACV" (Actual Cash Value): Market value of the vehicle at the time of loss, accounting for 
+depreciation, mileage, condition, and comparable sales in the local market.
+
+"Excess" (Deductible): The amount the policyholder pays before the insurer contributes. 
+Standard motor policy excess: $500. Voluntary excess options: $250, $1,000, $2,000.
+
+"Total Loss": A vehicle is declared a total loss when repair cost exceeds 75% of ACV, 
+OR when the vehicle cannot be safely repaired to a roadworthy standard.
+
+"Pre-existing Damage": Any damage present on the vehicle prior to the effective date of 
+the current policy period, documented via inspection photo at inception.
+
+CLAUSE 2 — COVERED PERILS
+The following events are covered under a comprehensive motor policy:
+2.1 Collision with another vehicle or fixed object
+2.2 Accidental damage (e.g., falling tree branch, hailstorm)
+2.3 Theft and attempted theft (with police report)
+2.4 Fire and explosion
+2.5 Flood/water damage (comprehensive only; excluded under third-party)
+2.6 Vandalism (with police report filed within 48 hours)
+
+CLAUSE 3 — EXCLUSIONS
+Claims are excluded or partially excluded for:
+3.1 Pre-existing damage not disclosed at inception
+3.2 Damage sustained while driving under the influence of alcohol/drugs
+3.3 Mechanical or electrical breakdown (not caused by an insured peril)
+3.4 Wear and tear, gradual deterioration
+3.5 Damage from racing, off-road use, or illegal activities
+3.6 Consequential losses (loss of use, rental, income)
+3.7 Damage to tires and wheel rims from road hazards (unless comprehensive rider)
+
+CLAUSE 4 — CLAIMS PROCEDURE
+4.1 Report deadline: Claims must be reported within 30 days of the incident.
+4.2 Police report: Required for theft, vandalism, and third-party involvement.
+4.3 Evidence: Policyholder must submit at minimum 4 photos (front, rear, left, right).
+    Multi-angle damage: 8+ photos recommended.
+4.4 AI assessment: The insurer may use AI-assisted damage assessment. The policyholder
+    retains the right to request a physical inspection by a licensed assessor.
+4.5 Override process: If the AI assessment is disputed, the adjuster completes a manual
+    override with written rationale, which is logged for audit purposes.
+
+CLAUSE 5 — SETTLEMENT OPTIONS
+5.1 Cash settlement: Based on repair estimate minus excess, paid to policyholder.
+5.2 Managed repair: Insurer manages repairs via a panel repairer. No cash payment.
+5.3 Total loss settlement: ACV minus salvage value minus excess, paid to policyholder.
+    Policyholder may retain salvage vehicle at market salvage price.
+
+CLAUSE 6 — BETTERMENT
+Where repairs involve parts that improve the vehicle beyond its pre-loss condition
+(e.g., new tires vs. worn tires, new battery vs. old battery), the insurer may apply
+a betterment deduction proportional to the age and condition of the replaced part.
+
+CLAUSE 7 — PRE-EXISTING DAMAGE
+7(a) Undisclosed pre-existing damage discovered during claim assessment may result in:
+    - Partial claim denial for the pre-existing portion
+    - Policy review and possible cancellation for non-disclosure
+7(b) If pre-existing damage is confirmed via historical inspection records, only new 
+    damage from the current incident is covered.
+7(c) AI systems must not penalise claimants for pre-existing damage not previously 
+    flagged in the system. Manual adjuster review is required in ambiguous cases.
+
+CLAUSE 8 — FRAUD PREVENTION
+8.1 Suspected fraudulent claims are referred to the Special Investigation Unit (SIU).
+8.2 Fraud indicators include but are not limited to:
+    - Damage inconsistent with reported accident mechanics
+    - Staged accident patterns
+    - Multiple claims within 12 months
+    - Vehicle value significantly below repair estimate
+8.3 AI fraud flags (fraud_flag=True) trigger mandatory SIU referral within 24 hours.
+    The AI flag is not itself grounds for denial; it triggers human review.
+8.4 Confirmed fraud results in policy cancellation and may be reported to industry 
+    fraud databases (e.g., IFB).
+
+CLAUSE 9 — DISPUTE RESOLUTION
+9.1 Informal: Contact claims manager within 14 days of decision.
+9.2 Formal: Submit written complaint; 8-week final response window.
+9.3 External: Refer to Financial Ombudsman Service (FOS) if not resolved.
+
+CLAUSE 10 — DATA AND AI
+10.1 AI-assisted assessments are advisory. Final settlement decisions require human sign-off.
+10.2 Adjuster overrides are logged for audit and model improvement purposes.
+10.3 Policyholders may request a copy of the AI assessment under data subject access rights.
+
+CLAUSE 11 — TOTAL LOSS PROCEDURE
+11.1 ACV appraisal ordered within 5 business days of total loss declaration.
+11.2 Settlement offer issued within 10 business days of ACV agreement.
+11.3 Policyholder has 7 days to accept or dispute the ACV. Dispute triggers independent appraisal.
+
+CLAUSE 12 — RENTAL AND ALTERNATIVE TRANSPORT
+12.1 Comprehensive policy: Up to 14 days rental at $50/day while vehicle is under repair.
+12.2 Total loss: Up to 7 days rental from date of total loss declaration to settlement.
+12.3 No rental benefit for third-party-only policies.

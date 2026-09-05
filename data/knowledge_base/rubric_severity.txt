@@ -1,0 +1,90 @@
+SEVERITY ASSESSMENT RUBRIC v1.3
+For use by adjusters and as a knowledge-base reference for the AI chat agent.
+
+PURPOSE
+This rubric provides a step-by-step guide for assigning severity ratings to vehicle damage claims.
+It supplements the taxonomy (taxonomy_v2.txt) with decision logic and edge cases.
+
+STEP 1 — IDENTIFY ALL DAMAGE CODES
+List every damage code visible in the submitted images. Use only codes from taxonomy_v2.txt §2.
+
+STEP 2 — APPLY AUTOMATIC SEVERITY TRIGGERS
+
+TOTAL LOSS triggers (any one sufficient):
+  □ FLOOD_DAMAGE present
+  □ Repair estimate > 75% ACV
+  □ STRUCTURAL_DAMAGE + AIRBAG_DEPLOYED both present
+  □ Engine bay intrusion visible (HOOD_CRUSH + STRUCTURAL_DAMAGE)
+
+SEVERE triggers (any one sufficient):
+  □ STRUCTURAL_DAMAGE present (without total loss threshold)
+  □ AIRBAG_DEPLOYED present (without structural damage)
+  □ ≥3 §2.3 codes present
+  □ UNDERCARRIAGE_DAMAGE + any §2.2 code
+  □ Repair estimate $8,000–$25,000
+
+MODERATE triggers:
+  □ Any §2.2 code present
+  □ ≥2 §2.1 codes present AND total estimate > $1,500
+  □ Any glass damage (WINDSHIELD_CRACK, REAR_WINDOW_CRACK)
+  □ Repair estimate $1,500–$8,000
+
+MINOR triggers (default if no higher trigger):
+  □ Only §2.1 codes present
+  □ Vehicle fully drivable
+  □ Repair estimate < $1,500
+
+STEP 3 — APPLY MODIFIERS
+
+UPGRADE severity by one level if:
+  - Policyholder is elderly or vulnerable (flag for customer service follow-up)
+  - Vehicle is a commercial vehicle (higher downtime risk)
+  - Damage is in a safety-critical area (steering, brakes, suspension)
+
+DOWNGRADE severity by one level if:
+  - All damage is on a single panel
+  - Vehicle is over 10 years old and codes are minor (pre-existing likely)
+  - Repair estimate from panel repairer is significantly below AI estimate
+
+STEP 4 — DOCUMENT OVERRIDE RATIONALE
+Every severity override must include:
+  a) Specific reason for change (code reference or cost estimate)
+  b) Any physical inspection findings
+  c) Reference to comparable precedent (optional but recommended)
+
+EDGE CASES
+
+E1: WINDSHIELD_SHATTER without other codes
+   → Default: Moderate (glass replacement + safety check)
+   → Exception: If vehicle is undrivable due to shatter, upgrade to Severe.
+
+E2: AIRBAG_DEPLOYED in a minor collision (airbag malfunction)
+   → AI will flag Severe. Adjuster review required.
+   → If airbag malfunction confirmed, override to Moderate with documentation.
+
+E3: Multiple small dents from hail
+   → DOOR codes × N: treat as Moderate if >4 panels affected, else Minor.
+   → Hail claims may use blanket estimate per panel from approved hail tariff.
+
+E4: Flood damage below door sill
+   → If water ingress is below seat level and ECU shows no fault codes, 
+     treat as Moderate (carpet/trim only).
+   → FLOOD_DAMAGE code reserved for confirmed ECU/electrical involvement.
+
+E5: Cosmetic damage on luxury/exotic vehicles
+   → ACV is high; even minor damage may exceed 5% ACV.
+   → Apply normal severity logic; do not upgrade severity due to vehicle value alone.
+
+COST ESTIMATION GUIDANCE
+
+The AI provides a cost range (low, high). Use the following for manual validation:
+
+Labour rate guide (market mid-point): $95/hr
+Panel replacement (standard): $600–$1,200 per panel
+PDR (per dent): $100–$400 per dent depending on size/location
+Windshield replacement: $300–$800 (OEM) / $200–$400 (aftermarket)
+Airbag module + SRS reset: $1,200–$3,500 per airbag
+Frame straightening: $800–$2,500
+Paint blend: $200–$500 per panel
+
+Total repair estimate = parts + labour + paint. Apply 10% margin for supplementals.

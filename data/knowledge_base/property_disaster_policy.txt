@@ -1,0 +1,55 @@
+# PROPERTY CATASTROPHE INSURANCE & REMOTE DAMAGE APPRAISAL STANDARD
+Document ID: PROP-INS-MMB-2025-V1
+Scope: Commercial & Residential Property Insurance, Disaster Assessment, and Aerial Claim Processing
+Applicability: Hurricane, Flood, Wildfire, Earthquake, Tornado, Storm Surge, Roof and Structural Collapse
+
+================================================================================
+1. INSURED PROPERTY & DISASTER PERILS
+================================================================================
+
+1.1 Insured Subject
+Structures, roofing systems, foundations, exterior envelopes, and permanent fixtures situated within the declared policy location.
+
+1.2 Covered Catastrophe Perils:
+- Tropical Cyclones & Hurricanes: Sustained high-velocity wind, barometric pressure differentials, and wind-driven rain penetration.
+- Flash Floods & Inundation: Surface water runoff, riverine breaches, and coastal storm surge overtopping foundation sills.
+- Wildfires & Conflagration: Direct flame impingement, radiant heat combustion, and airborne ember ignition.
+- Earthquakes & Seismic Shock: Ground acceleration causing foundation shear, masonry cracking, and load-bearing failure.
+- Severe Convective Storms: Tornadic wind uplift, localized microbursts, and large-diameter hail impacts.
+
+================================================================================
+2. FIVE-STEP SATELLITE / AERIAL PROPERTY APPRAISAL PROTOCOL
+================================================================================
+
+Step 1 — Determine Whether a Disaster Occurred:
+Perform comparative analysis between pre-disaster baseline imagery and post-event surveillance to verify catastrophic impact (Yes / No).
+
+Step 2 — Identify Disaster Type:
+Classify the environmental mechanism based on signature visual evidence:
+- Hurricane / Cyclone: Widespread roof envelope stripping, distributed debris scatter aligned with wind vectors, standing coastal water.
+- Inundation / Flood: Silt deposition, reflective water pooling across parcels, submersion of transit infrastructure.
+- Wildfire: Complete structural footprint ash footprint, blackened foliage boundaries, perimeter firebreaks.
+- Earthquake: Diagonal wall shear failure, roof pancake collapse, ground rupture fissures.
+
+Step 3 — Enumerate Total House / Structure Count:
+Identify the total number of built footprints within the delineated appraisal sector.
+
+Step 4 — Enumerate Damaged House / Structure Count:
+Count individual structures exhibiting envelope breach, missing roof decking, wall collapse, or complete structural leveling. Calculate the Area Damage Ratio:
+Damage Ratio = (Damaged Structure Count) / (Total Structure Count)
+
+Step 5 — Insurance Claim Decision & Rationale:
+- No Compensation: No catastrophe detected (Damage Ratio = 0%), or damage strictly restricted to uninsurable landscaping.
+- Partial Compensation: Damage Ratio between 1% and 49%. Individual structures retain core load-bearing integrity; repairs involve roof reroofing, siding replacement, or interior dry-out.
+- Full Compensation: Damage Ratio >= 50%, or community infrastructure condemned as a constructive total loss. Policy limits disbursed under Catastrophe Endorsement clauses.
+
+================================================================================
+3. PROPERTY DAMAGE SEVERITY TIERS
+================================================================================
+
+Severity Tier   Damage Ratio    Typical Structural Condition                    Claim Settlement
+-------------------------------------------------------------------------------------------------------------------------
+Minor           < 10%           Missing shingles, fascia denting, cosmetic scuff Repair estimate minus policy deductible
+Moderate        10% – 49%       Partial roof uplift, wall penetration, water     Itemized structural repair indemnity
+Severe          50% – 79%       Major framing failure, interior wall collapse    Substantial loss settlement
+Total Loss      >= 80%          Structural foundation scrape, complete collapse  100% Policy limit + debris removal

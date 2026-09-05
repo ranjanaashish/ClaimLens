@@ -1,0 +1,46 @@
+# HEALTH INSURANCE UNDERWRITING & RADIOLOGICAL RISK EVALUATION GUIDE
+Document ID: HEALTH-INS-MMB-2025-V1
+Scope: Medical Underwriting, Radiographic Verification, Health Risk Stratification, and Policy Pricing
+Applicability: Chest Radiographs (CXR), Extremity & Skeletal Radiography, Spine, and Medical Claim Adjudication
+
+================================================================================
+1. RADIOGRAPHIC UNDERWRITING PRINCIPLES
+================================================================================
+
+1.1 Purpose & Role
+Radiological review serves as an objective medical verification layer in health and life insurance underwriting. It validates applicant-reported medical disclosures against verified radiographic pathology to prevent adverse selection and establish accurate actuarial premium pricing.
+
+1.2 Insured Evaluation Layers:
+1. Scan Region Identification:
+   Confirm the specific anatomical compartment depicted in the diagnostic imaging study:
+   - Chest (PA and Lateral views): Trachea, lungs, pleural spaces, cardiac silhouette, aortic arch, hilar vessels, ribs, and diaphragm.
+   - Skeletal & Extremity: Long bones, joint spaces, articular surfaces, periosteum.
+   - Spine (Cervical, Thoracic, Lumbar): Vertebral body alignment, disc spaces, neural foramina.
+
+2. Scan Result Concordance (Match Verification):
+   Cross-examine the visual radiographic findings against the provided clinical radiology report:
+   - Match = Yes: Radiographic visual evidence corresponds with the reported findings.
+   - Match = No: Discrepancy detected (e.g. undisclosed pulmonary nodules, undetected cardiomegaly, or exaggerated report findings). Discrepancies trigger mandatory medical re-evaluation.
+
+3. Health Risk Severity Grading:
+   - Low Risk: Clear lung parenchyma, no pleural effusion, normal cardiac diameter (cardiothoracic ratio < 0.50), age-appropriate skeletal density.
+   - Moderate Risk: Controlled chronic findings, such as mild degenerative osteoarthritic changes, chronic stable apical pleural thickening, or mild asymptomatic scoliosis.
+   - High Risk: Active acute pathology, including acute consolidation/pneumonia, pleural effusion, pronounced cardiomegaly, severe osteolytic lesions, or suspected mass densities.
+
+4. Underwriting Decision & Policy Action:
+   - Standard: Accept at standard actuarial rates without rating exclusions (Low Risk + Match Yes).
+   - Higher Premium: Accept with percentage rating surcharge (e.g. +25% to +50% premium loading) or specific chronic illness rider (Moderate Risk + Match Yes).
+   - Declined / Postponed: Refuse immediate coverage or postpone policy issuance until acute underlying condition resolves and comprehensive specialist clearance is provided (High Risk, or unverified Match No discrepancies).
+
+================================================================================
+2. COMMON RADIOLOGICAL FINDINGS & UNDERWRITING IMPLICATIONS
+================================================================================
+
+Finding                             Anatomical Focus    Risk Classification   Underwriting Decision
+-------------------------------------------------------------------------------------------------------------------------
+Lungs clear, heart normal           Chest / CXR         Low Risk              Standard
+Degenerative arthritic changes      Spine / Joints      Moderate Risk         Higher Premium (+15%–25%)
+Mild chronic bronchial thickening   Chest / Bronchi     Moderate Risk         Higher Premium (+20%)
+Blunted costophrenic angle/effusion Pleural Space       High Risk             Declined / Postponed
+Cardiomegaly (CTR > 0.55)           Cardiovascular      High Risk             Declined / Cardiovascular Exclusion
+Old healed rib fracture (aligned)   Thoracic Cage       Low Risk              Standard

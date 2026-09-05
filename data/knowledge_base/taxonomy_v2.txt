@@ -1,0 +1,103 @@
+VEHICLE DAMAGE TAXONOMY v2.1
+Auto Insurance Division
+Last updated: 2024-01
+
+§1. INTRODUCTION
+
+This taxonomy defines the standardised vocabulary for vehicle damage classification used in 
+automated and manual claims assessment. All damage codes in the ClaimLens system are derived 
+from this taxonomy. Adjusters must use only codes defined in §2 when overriding AI assessments.
+
+§2. DAMAGE CODE REFERENCE
+
+§2.1 MINOR DAMAGE CODES
+Minor damage is cosmetic in nature. The vehicle is fully drivable. Estimated cost: $200–$1,500.
+
+FRONT_BUMPER_SCRATCH  : Surface scratching or scuffing on the front bumper fascia. 
+                        No structural deformation. Repair: sanding + paint blend.
+REAR_BUMPER_SCRATCH   : Same as above, rear bumper.
+PAINT_TRANSFER        : Paint from another vehicle deposited on the surface. 
+                        Repair: solvent removal or wet sanding.
+SIDE_MIRROR_DAMAGE    : Side mirror housing cracked or mirror glass broken. 
+                        Assembly replacement typically required.
+
+§2.2 MODERATE DAMAGE CODES
+Moderate damage requires panel repair or replacement. Cost: $1,500–$8,000.
+
+FRONT_BUMPER_CRUSH    : Front bumper compressed or deformed. Fascia and absorber replacement.
+REAR_BUMPER_CRUSH     : Rear bumper compressed or deformed. Fascia and absorber replacement.
+HOOD_CREASE           : Hood panel has a crease or dent from impact. PDR or panel replacement.
+TRUNK_LID_DENT        : Trunk lid dented. PDR or lid replacement.
+DOOR_FL_DENT          : Front-left door dented. PDR or door skin replacement.
+DOOR_FR_DENT          : Front-right door dented.
+DOOR_RL_DENT          : Rear-left door dented.
+DOOR_RR_DENT          : Rear-right door dented.
+FENDER_FL_DENT        : Front-left fender dented. Fender replacement.
+FENDER_FR_DENT        : Front-right fender dented.
+WINDSHIELD_CRACK      : Windshield crack (not shatter). Star cracks < 6 inches may be repairable.
+REAR_WINDOW_CRACK     : Rear window cracked. Full replacement required.
+WHEEL_RIM_DAMAGE      : Alloy or steel rim bent or cracked. Rim replacement.
+
+§2.3 SEVERE DAMAGE CODES
+Severe damage involves major structural or safety systems. Cost: $8,000–$25,000.
+
+HOOD_CRUSH            : Hood significantly crushed, indicating engine bay intrusion.
+TRUNK_LID_CRUSH       : Trunk lid crushed, indicating boot area intrusion.
+WINDSHIELD_SHATTER    : Complete windshield failure. Immediate safety risk.
+UNDERCARRIAGE_DAMAGE  : Damage to underbody, floor pan, or exhaust. Requires inspection jack.
+AIRBAG_DEPLOYED       : One or more airbags deployed. Full SRS system reset/replacement.
+STRUCTURAL_DAMAGE     : Frame rail, A/B/C pillar, or unibody deformation detected.
+
+§2.4 TOTAL LOSS CODES
+FLOOD_DAMAGE          : Water ingress above door sill. ECU, wiring, upholstery involved.
+
+§3. SEVERITY THRESHOLDS
+
+§3.1 MINOR: All damage codes are in §2.1 only. No safety systems involved. Cost < $1,500.
+
+§3.2 MODERATE: One or more §2.2 codes present. No structural damage. Cost $1,500–$8,000.
+    A claim is escalated to Moderate if:
+    - ≥2 panels are damaged, OR
+    - Any glass component is damaged, OR
+    - Cost estimate exceeds $1,500
+
+§3.3 SEVERE: One or more §2.3 codes present. Structural integrity may be compromised.
+    Automatic Severe triggers:
+    - STRUCTURAL_DAMAGE present
+    - AIRBAG_DEPLOYED present
+    - ≥3 panel codes across §2.2–§2.3
+    - Cost estimate exceeds $8,000
+
+§3.4 TOTAL LOSS: Repair cost > 75% of Actual Cash Value (ACV), OR structural damage 
+    makes safe repair impractical, OR FLOOD_DAMAGE code present.
+
+§4. MULTI-VEHICLE AND MULTI-ANGLE ASSESSMENTS
+
+When multiple images are submitted for a single claim:
+1. Each image is assessed independently.
+2. Damage codes are merged (union of all detected codes).
+3. Severity is determined by the highest individual severity across all images.
+4. Bounding boxes are stored per-image.
+
+§5. FRAUD INDICATORS
+
+The fraud_flag should be set when:
+- Damage pattern inconsistent with stated accident type (e.g., rear damage from head-on)
+- Damage appears staged (bilateral symmetric impact, no road surface contact marks)
+- Policy inception < 30 days before claim date
+- Vehicle ACV < estimated repair cost but not classified as Total Loss
+- Damage type inconsistent with vehicle age/mileage profile
+
+§6. PRE-EXISTING DAMAGE
+
+Pre-existing damage must be identified at policy inception via inspection photos.
+If pre-existing damage is detected in claim images:
+1. Flag for manual adjuster review.
+2. Split assessment: pre-existing (excluded) vs. new damage (claimable).
+3. Document with PRIOR_DAMAGE note in the override reason field.
+
+§7. REVISION HISTORY
+
+v2.1 (2024-01): Added FLOOD_DAMAGE code; revised Total Loss threshold from 80% to 75% ACV.
+v2.0 (2023-06): Added UNDERCARRIAGE_DAMAGE; split BUMPER_DAMAGE into CRUSH/SCRATCH variants.
+v1.0 (2022-01): Initial taxonomy release.

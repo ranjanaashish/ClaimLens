@@ -1,0 +1,51 @@
+# TRAFFIC LIABILITY ASSESSMENT & ACCIDENT RECONSTRUCTION STANDARD
+Document ID: LIAB-INS-MMB-2025-V1
+Scope: Auto Liability Claims, Multi-Vehicle Collision Adjudication, Dashcam Video Analysis, and Fault Attribution
+Applicability: Intersection Collisions, Rear-End Impacts, Lane Changing, Pedestrian Incidents, Highway and Urban Scenes
+
+================================================================================
+1. SIX-STEP DASHCAM / SCENE ACCIDENT EVALUATION PROTOCOL
+================================================================================
+
+All auto liability and dashcam accident assessments must strictly execute the six-step sequence established in the INS-MMBench Liability Benchmark:
+
+Step 1 — Prevailing Weather Conditions:
+Identify atmospheric lighting and precipitation:
+- Sunny / Clear: Optimal dry pavement traction, clear optical line of sight.
+- Rainy / Wet: Reduced pavement friction coefficient, hydrodynamic spray, glare reflections.
+- Snowy / Icy: Severely degraded stopping distance, surface snow packing, lane marking obliteration.
+- Foggy / Mist: Restricted sight distance, low optical contrast.
+
+Step 2 — Operating Scene Environment:
+Identify the contextual roadway environment:
+- Highway / Freeway: Controlled access, high travel velocities, multi-lane divided traffic.
+- Urban: High density, street-side parked vehicles, visual clutter, commercial driveways.
+- Rural: Undivided two-lane corridors, unlighted shoulders, agricultural crossings.
+- Mountain: Grade variations, tight radius turns, rock-face visual obstructions.
+- Tunnel: Artificial lighting transition, confined clearance barriers.
+
+Step 3 — Roadway Linear Geometry:
+Classify the layout of the collision locus:
+- Arterials: Straight multi-lane thoroughfares.
+- Intersection: At-grade crossing governed by traffic control signals, stop signs, or roundabouts.
+- T-Junction: Three-way perpendicular intersection with defined right-of-way hierarchy.
+- Curve: Horizontal radius requiring lateral deceleration and steering deflection.
+- Ramp: Acceleration or deceleration connector lanes.
+
+Step 4 — Accident Occurrence Verification:
+Confirm whether an impact event, vehicle contact, or evasive roadway departure occurred (Yes / No).
+
+Step 5 — Proximate Accident Cause:
+Synthesize the primary physical mechanism of the collision into a concise factual summary:
+- Failure to yield right-of-way during unprotected left turn.
+- Inadequate following distance resulting in forward vehicle rear-end impact.
+- Sudden lateral drift / lane change into an occupied blind-spot lane.
+- Failure to observe opposing crossing traffic when entering from an unsignalized side road.
+- Disregard of red traffic signal or posted stop sign control.
+
+Step 6 — Main Responsible Party & Fault Allocation:
+Determine liability allocation under comparative negligence rules:
+- Ego-Car Primary: Driver of the recording vehicle committed the primary moving violation or failed to yield.
+- Other Car Primary: Striking third-party vehicle violated traffic controls or made an illegal maneuver.
+- Pedestrian Primary: Pedestrian crossed active arterial outside crosswalk directly into moving path.
+- Both (Comparative Fault): Both drivers contributed through concurrent negligence (e.g. mutual intersection entry without clearance).

@@ -1,0 +1,49 @@
+/* assets/style.css — ClaimLens custom styles */
+
+/* Slightly tighter sidebar */
+[data-testid="stSidebar"] {
+    min-width: 260px;
+    max-width: 320px;
+}
+
+/* Card-like metric block */
+[data-testid="stMetric"] {
+    background: rgba(255,255,255,0.04);
+    border: 1px solid rgba(255,255,255,0.08);
+    border-radius: 10px;
+    padding: 12px 16px;
+}
+
+/* Chip-style button row */
+[data-testid="stHorizontalBlock"] button[kind="secondary"] {
+    border-radius: 20px;
+    font-size: 12px;
+    padding: 4px 12px;
+    border-color: rgba(59,130,246,0.4);
+    color: #93c5fd;
+}
+
+/* Override form section */
+[data-testid="stExpander"] summary {
+    font-weight: 600;
+}
+
+/* Progress bar colour override for cost bar */
+[data-testid="stProgress"] > div > div {
+    background: linear-gradient(to right, #22c55e, #f59e0b, #ef4444);
+}
+
+/* Chat message bubbles */
+[data-testid="stChatMessage"] {
+    border-radius: 12px;
+    margin-bottom: 4px;
+}
+
+/* Responsive table */
+[data-testid="stDataFrame"] {
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+/* Hide Streamlit default footer */
+footer {visibility: hidden;}

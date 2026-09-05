@@ -1,0 +1,88 @@
+# AGRICULTURAL INSURANCE POLICY & CROP DAMAGE APPRAISAL STANDARD
+Document ID: AGRI-INS-MMB-2025-V1
+Scope: Agricultural Crop Insurance Underwriting, Damage Verification, and Claim Processing
+Applicability: Grape, Corn/Maize, Wheat, Rice, Tomato, Soybean, Citrus, and General Field Crops
+
+================================================================================
+1. INSURED SUBJECT & POLICY COVERAGE
+================================================================================
+
+1.1 Insured Subject
+This contract covers primary crops cultivated by the policyholder within designated agricultural parcels during the active policy term. Actual crop yield, stand density, and harvested commodity quality constitute the insured subject.
+
+1.2 Scope of Insurance Coverage
+The policy provides indemnity against verified economic losses arising from three distinct peril categories:
+
+1. Natural Disaster Liability:
+   Direct physical crop damage or yield reduction caused by documented natural catastrophes, including drought, heavy precipitation, flash flooding, frost/freeze events, hail, high-wind typhoons, and temperature extremes.
+
+2. Pest and Disease Liability:
+   Crop biomass loss or fruit damage resulting from sudden, widespread pest or fungal pathogen outbreaks confirmed by certified agronomic inspection.
+   - Mild Outbreak: Losses between 10% and 50% of the insured stand yield qualify for Partial Compensation.
+   - Severe / Catastrophic Outbreak: Losses exceeding 50% of yield, or widespread systemic disease leading to complete crop abandonment, qualify for Full Compensation.
+   - Below-Threshold Losses: Losses under 10% canopy impact represent customary agricultural variance and receive No Compensation.
+
+3. Other Accident Liability:
+   Crop destruction directly caused by external force majeure events (e.g., wildland fire, chemical drift, explosion) verified during field loss adjustment.
+
+================================================================================
+2. STANDARDIZED MULTI-STEP EVALUATION PROTOCOL
+================================================================================
+
+All agricultural crop claim adjustments must strictly execute the four-step evaluation sequence established in the INS-MMBench Agricultural Benchmark:
+
+Step 1 — Identify Crop Species:
+Visually verify leaf morphology, shoot structure, vine/stalk arrangement, and fruit clusters. Standard recognized species include:
+- Grape (Vitis vinifera): Palmate lobed leaves, woody vine canes, pendulous conical fruit clusters.
+- Tomato (Solanum lycopersicum): Pinnate compound foliage, glandular hairs, spherical berry clusters.
+- Corn / Maize (Zea mays): Parallel-veined lanceolate leaves, central stalk, nodal ear placement.
+- Wheat (Triticum aestivum): Linear narrow blades, terminal awned spikelets.
+- Rice (Oryza sativa): Tillering culms, ligulate blades, drooping terminal panicles.
+
+Step 2 — Estimate Fruit Cluster Count / Stand Density:
+Enumerate visible fruit clusters, pods, or ears across the sampled visual quadrant to determine baseline reproductive yield capacity.
+
+Step 3 — Detect Pest & Disease Infection:
+Examine upper and lower foliar surfaces, shoot nodes, and fruit surfaces for diagnostic pathological signs:
+- Downy Mildew (Plasmopara viticola): Translucent yellowish "oil-spot" foliar lesions with white downy fungal sporulation on abaxial surfaces; necrotic berry shriveling in clusters.
+- Powdery Mildew (Erysiphe necator): Fine ash-white or gray powdery mycelial coating on leaves and young fruit; berry skin cracking and scarring.
+- Early Blight (Alternaria solani): Dark brown concentric "target-board" lesions surrounded by chlorotic yellow halos; lower canopy progression.
+- Late Blight (Phytophthora infestans): Water-soaked dark olive-green lesions with pale margins and rapid necrotic collapse under high humidity.
+- Corn Leaf Blight (Exserohilum turcicum): Long, elliptical cigar-shaped grayish-green to tan foliar lesions.
+- Cereal Rust (Puccinia spp.): Raised orange-brown to reddish powdery pustules rupturing leaf epidermis.
+
+Step 4 — Insurance Claim Decision & Rationale:
+Based on Steps 1–3 and contract thresholds, render one of three binding determinations:
+- No Compensation: No infection detected, or minor localized damage under 10% yield threshold.
+- Partial Compensation: Verified infection (Yes) with mild-to-moderate foliar or cluster impairment (10%–50% estimated yield loss). Recommended curative treatment allows salvage of remaining harvest.
+- Full Compensation: Severe infection (Yes) with extensive canopy defoliation, cluster rot, or total stand death exceeding 50% yield loss.
+
+================================================================================
+3. CROP DAMAGE CODE TAXONOMY
+================================================================================
+
+Code                  Description                                  Typical Severity   Action Required
+-------------------------------------------------------------------------------------------------------------------------
+CROP_DOWNY_MILDEW     Foliar oil-spots and berry cluster necrosis  Moderate           Copper hydroxide / systemic spray
+CROP_POWDERY_MILDEW   Powdery mycelial bloom on leaves/fruit       Moderate           Sulfur dust / biofungicide
+CROP_EARLY_BLIGHT     Concentric target lesions with halo          Moderate           Lower canopy pruning & fungicidal drench
+CROP_LATE_BLIGHT      Water-soaked foliar collapse                 Severe             Immediate broad-spectrum fungicide
+CROP_LEAF_BLIGHT      Elliptical necrotic lesions across midrib    Moderate           Resistant hybrid rotation / triazole spray
+CROP_RUST             Epidermal pustules and premature senescence  Minor–Moderate     Strobilurin / foliar protectant
+CROP_PEST_INFEST      Aphid, mite, or borer foliar infestation    Minor–Moderate     Integrated Pest Management (IPM) release
+CROP_DROUGHT_STRESS   Leaf rolling, chlorosis, and stunted vigor   Moderate–Severe    Emergency irrigation allocation
+CROP_HAIL_DEFOLIATION Shredded blades, broken stems, split fruit   Moderate–Severe    Wound seal protectant / yield claim
+
+================================================================================
+4. ADJUSTER COMPENSATION CALCULATION RUBRIC
+================================================================================
+
+Estimated Damage %    Pest/Disease Present?    Claim Determination      Settlement Formula
+-------------------------------------------------------------------------------------------------------------------------
+0% – 9%               No / Negligible          No Compensation          $0 (Loss within normal grower deductible)
+10% – 25%             Yes (Mild)               Partial Compensation     Insured Value × (Loss % − 5% deductible)
+26% – 50%             Yes (Moderate)           Partial Compensation     Insured Value × Loss %
+51% – 100%            Yes (Severe / Epidemic)  Full Compensation        100% Insured Stand Guarantee (Max Policy Limit)
+
+Pre-Harvest Inspection Requirement:
+Adjusters must take minimum 3 high-resolution macro shots of infected leaf surfaces and 2 wide-angle canopy stand shots to substantiate compensation decisions for audit compliance.

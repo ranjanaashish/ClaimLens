@@ -1,0 +1,124 @@
+CLAIM PRECEDENTS — CURATED REFERENCE CASES
+Source: Internal claims database (anonymised)
+Date range: 2022–2024
+
+These precedents are curated for use by adjusters and the AI knowledge agent to answer 
+questions about comparable past claims, settlement ranges, and decision rationale.
+
+═══════════════════════════════════════════════════════════════════════
+CLAIM #CL-2024-0471
+Date: 2024-03-15
+Vehicle: 2019 Toyota Camry (ACV: $18,500)
+Incident: Frontal collision at ~25 mph. Struck stationary vehicle at traffic light.
+Damage codes: FRONT_BUMPER_CRUSH, HOOD_CREASE, WINDSHIELD_CRACK
+AI Severity: Moderate | Human Severity: Moderate (no override)
+AI Confidence: 0.89 | Fraud Flag: No
+Repair cost: $4,200 | Settlement: $3,700 (excess $500)
+Repair notes: Bumper fascia + absorber replaced. Hood PDR (not replacement). 
+              Windshield replaced (star crack > 6 inches).
+Outcome: Closed. Repair via panel repairer. 14 days total.
+
+═══════════════════════════════════════════════════════════════════════
+CLAIM #CL-2024-0389
+Date: 2024-02-08
+Vehicle: 2021 Honda Accord (ACV: $22,000)
+Incident: Rear-end collision in car park. Hit by reversing SUV.
+Damage codes: REAR_BUMPER_CRUSH, TRUNK_LID_DENT
+AI Severity: Moderate | Human Severity: Moderate (no override)
+AI Confidence: 0.84 | Fraud Flag: No
+Repair cost: $3,800 | Settlement: $3,300 (excess $500)
+Repair notes: Rear bumper complete replacement. Trunk lid PDR.
+Outcome: Closed. Managed repair. 10 days total.
+
+═══════════════════════════════════════════════════════════════════════
+CLAIM #CL-2023-1102
+Date: 2023-11-22
+Vehicle: 2016 Ford Focus (ACV: $8,200)
+Incident: Road debris struck windshield and driver-side door at highway speed.
+Damage codes: WINDSHIELD_SHATTER, DOOR_FL_DENT
+AI Severity: Moderate | Human Severity: Minor (override)
+AI Confidence: 0.71 | Fraud Flag: No
+Override reason: "Windshield shatter coded as Severe trigger but repair cost well within 
+                  Minor threshold. Door dent is superficial. Reclassified Minor."
+Repair cost: $1,100 | Settlement: $600 (excess $500)
+Outcome: Closed. Cash settlement. Human override accepted by claims manager.
+
+═══════════════════════════════════════════════════════════════════════
+CLAIM #CL-2024-0812
+Date: 2024-06-30
+Vehicle: 2022 BMW 5 Series (ACV: $48,000)
+Incident: High-speed collision. Vehicle struck highway barrier at ~60 mph.
+Damage codes: STRUCTURAL_DAMAGE, AIRBAG_DEPLOYED, HOOD_CRUSH, FRONT_BUMPER_CRUSH, WINDSHIELD_SHATTER
+AI Severity: Total Loss | Human Severity: Total Loss (no override)
+AI Confidence: 0.97 | Fraud Flag: No
+Repair estimate: $39,500 (82% of ACV) → Total Loss triggered
+ACV appraisal: $47,200 (recent comparable sales) 
+Settlement: $46,700 (ACV minus $500 excess; policyholder retains salvage at $8,000)
+Outcome: Total loss settled. 21 days total. Policyholder satisfied.
+
+═══════════════════════════════════════════════════════════════════════
+CLAIM #CL-2024-0543
+Date: 2024-04-10
+Vehicle: 2020 Kia Sportage (ACV: $15,800)
+Incident: Side-swipe collision on motorway. Third-party at fault.
+Damage codes: DOOR_FL_DENT, DOOR_RL_DENT, FENDER_FL_DENT, SIDE_MIRROR_DAMAGE
+AI Severity: Moderate | Human Severity: Moderate (no override)
+AI Confidence: 0.79 | Fraud Flag: No
+Repair cost: $5,600 | Settlement: $5,100 (excess $500)
+Repair notes: Both doors replaced (PDR not viable). Fender straightened. Mirror replaced.
+Third-party recovery: Full recovery from at-fault driver's insurer. Net cost: $0.
+Outcome: Closed. 18 days total.
+
+═══════════════════════════════════════════════════════════════════════
+CLAIM #CL-2024-0291 — FRAUD REFERRAL
+Date: 2024-01-19
+Vehicle: 2015 Mercedes C-Class (ACV: $12,000)
+Incident: Claimant reported stationary vehicle struck overnight in car park.
+Damage codes: FRONT_BUMPER_CRUSH, REAR_BUMPER_CRUSH (AI flagged bilateral)
+AI Severity: Moderate | AI Confidence: 0.68 | Fraud Flag: YES
+Flag reason: "Bilateral front and rear bumper damage inconsistent with single stationary 
+              impact. Possible staged collision."
+SIU referral: Yes (same day)
+SIU findings: CCTV footage contradicted claimant's account. Third-party involvement 
+              confirmed as staged. Two prior claims within 12 months.
+Outcome: Claim denied. Policy cancelled. Referred to IFB (Insurance Fraud Bureau).
+
+═══════════════════════════════════════════════════════════════════════
+CLAIM #CL-2023-0888 — PRE-EXISTING DAMAGE
+Date: 2023-09-05
+Vehicle: 2018 Volkswagen Passat (ACV: $14,200)
+Incident: Hailstorm damage.
+Damage codes: DOOR_FR_DENT, DOOR_RR_DENT, HOOD_CREASE, FENDER_FR_DENT
+AI Severity: Moderate | Human Severity: Minor (partial override)
+Pre-existing: Inspection photos showed prior door dents on FR and RR doors.
+Override reason: "Pre-existing dents on FR and RR doors per inception inspection.
+                  Only new hail dents on hood and fender claimable."
+Repair cost (full): $4,800 | Repair cost (new damage only): $1,900
+Settlement: $1,400 (excess $500)
+Outcome: Closed. Partial settlement for new damage only.
+
+═══════════════════════════════════════════════════════════════════════
+CLAIM #CL-2024-0661 — LOW CONFIDENCE REVIEW
+Date: 2024-05-14
+Vehicle: 2017 Audi A4 (ACV: $16,500)
+Incident: Claimant submitted blurry, low-resolution images. Damage partially obscured.
+AI Confidence: 0.44 | Low Confidence Flag: YES
+AI Damage codes: FRONT_BUMPER_SCRATCH (uncertain)
+Human action: Physical inspection ordered per Clause 4.4.
+Physical findings: FRONT_BUMPER_CRUSH, WINDSHIELD_CRACK (missed in photos)
+Revised severity: Moderate
+Repair cost: $3,200 | Settlement: $2,700 (excess $500)
+Lesson: Low confidence flags should always trigger physical inspection for claims > $1,000.
+
+═══════════════════════════════════════════════════════════════════════
+SETTLEMENT STATISTICS (2023–2024, n=412 settled claims)
+
+Average settlement by severity:
+  Minor    : $680   (range: $120–$1,400)
+  Moderate : $4,120 (range: $1,050–$7,800)
+  Severe   : $13,400 (range: $7,500–$24,600)
+  Total Loss: $18,200 (range: $8,200–$51,000, net of salvage)
+
+AI override rate: 8.3% of assessments modified by adjusters
+Most common override reason: Severity downgrade (Minor→Moderate: wrong direction 31%)
+Average inference latency: 2.1s (Gemini Vision), 0.9s (stub)

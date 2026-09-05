@@ -1,0 +1,57 @@
+{
+  "overall": {
+    "accuracy": 0.842,
+    "f1_macro": 0.814,
+    "false_positive_rate": 0.113,
+    "mIoU": 0.71,
+    "precision": 0.826,
+    "recall": 0.842,
+    "total_samples": 520
+  },
+  "severity_confusion_matrix": {
+    "labels": ["Minor", "Moderate", "Severe", "Total Loss"],
+    "matrix": [
+      [108, 12,  2,  0],
+      [ 14, 182, 18,  3],
+      [  3,  22, 95,  8],
+      [  0,   2,  6, 45]
+    ]
+  },
+  "per_class": [
+    {"damage_code": "FRONT_BUMPER_CRUSH",   "precision": 0.91, "recall": 0.88, "f1": 0.895, "support": 68},
+    {"damage_code": "REAR_BUMPER_CRUSH",    "precision": 0.87, "recall": 0.85, "f1": 0.860, "support": 54},
+    {"damage_code": "HOOD_CREASE",          "precision": 0.83, "recall": 0.80, "f1": 0.815, "support": 45},
+    {"damage_code": "HOOD_CRUSH",           "precision": 0.89, "recall": 0.92, "f1": 0.905, "support": 26},
+    {"damage_code": "WINDSHIELD_CRACK",     "precision": 0.79, "recall": 0.76, "f1": 0.775, "support": 38},
+    {"damage_code": "WINDSHIELD_SHATTER",   "precision": 0.95, "recall": 0.94, "f1": 0.945, "support": 18},
+    {"damage_code": "DOOR_FL_DENT",         "precision": 0.74, "recall": 0.71, "f1": 0.725, "support": 52},
+    {"damage_code": "DOOR_FR_DENT",         "precision": 0.72, "recall": 0.69, "f1": 0.705, "support": 49},
+    {"damage_code": "DOOR_RL_DENT",         "precision": 0.70, "recall": 0.68, "f1": 0.690, "support": 41},
+    {"damage_code": "DOOR_RR_DENT",         "precision": 0.69, "recall": 0.67, "f1": 0.680, "support": 38},
+    {"damage_code": "FENDER_FL_DENT",       "precision": 0.76, "recall": 0.73, "f1": 0.745, "support": 33},
+    {"damage_code": "FENDER_FR_DENT",       "precision": 0.75, "recall": 0.72, "f1": 0.735, "support": 31},
+    {"damage_code": "STRUCTURAL_DAMAGE",    "precision": 0.88, "recall": 0.85, "f1": 0.865, "support": 22},
+    {"damage_code": "AIRBAG_DEPLOYED",      "precision": 0.97, "recall": 0.96, "f1": 0.965, "support": 15},
+    {"damage_code": "PAINT_TRANSFER",       "precision": 0.62, "recall": 0.58, "f1": 0.600, "support": 36},
+    {"damage_code": "SIDE_MIRROR_DAMAGE",   "precision": 0.80, "recall": 0.78, "f1": 0.790, "support": 28},
+    {"damage_code": "WHEEL_RIM_DAMAGE",     "precision": 0.83, "recall": 0.81, "f1": 0.820, "support": 16},
+    {"damage_code": "FLOOD_DAMAGE",         "precision": 0.93, "recall": 0.91, "f1": 0.920, "support": 11}
+  ],
+  "ins_mmbench": {
+    "description": "Comparison against INS-MMBench auto-insurance subset (held-out)",
+    "categories": ["Damage Detection", "Severity Classification", "Cost Estimation", "Fraud Detection", "Explanation Quality"],
+    "our_model":   [0.842, 0.814, 0.763, 0.720, 0.681],
+    "baseline":    [0.771, 0.738, 0.692, 0.634, 0.595],
+    "gpt4v":       [0.881, 0.856, 0.801, 0.768, 0.742]
+  },
+  "severity_distribution": {
+    "Minor": 122,
+    "Moderate": 217,
+    "Severe": 128,
+    "Total Loss": 53
+  },
+  "confidence_histogram": {
+    "bins": ["0.0-0.2", "0.2-0.4", "0.4-0.6", "0.6-0.8", "0.8-1.0"],
+    "counts": [8, 19, 47, 142, 304]
+  }
+}

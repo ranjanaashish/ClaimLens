@@ -1,0 +1,21 @@
+# Core UI
+streamlit>=1.36.0
+pillow>=10.0.0
+plotly>=5.22.0
+pandas>=2.0.0
+numpy>=1.26.0
+
+# LLM providers (lightweight direct clients — no litellm needed)
+# openai package supports: OpenAI, OpenRouter, and any OpenAI-compatible API
+openai>=1.30.0
+# Gemini Vision (VLM) + Gemini chat
+google-generativeai>=0.7.0
+# anthropic (optional — only needed if using Claude)
+# anthropic>=0.25.0
+
+# RAG — local embeddings + vector store (free, CPU-safe)
+sentence-transformers>=2.7.0
+faiss-cpu>=1.8.0
+
+# HTTP (Ollama REST calls + VLM REST backend)
+requests>=2.31.0
