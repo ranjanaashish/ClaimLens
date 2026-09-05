@@ -7,11 +7,11 @@
 [![Fine-Tuning](https://img.shields.io/badge/DPO%20%2F%20SFT-Training%20Pipeline-purple.svg)](https://huggingface.co/docs/trl)
 [![CI](https://github.com/ranjanaashish/ClaimLens/actions/workflows/ci.yml/badge.svg)](https://github.com/ranjanaashish/ClaimLens/actions)
 [![Docker](https://img.shields.io/badge/Docker-Ready-2496ED.svg?logo=docker&logoColor=white)](Dockerfile)
-[![Open in Streamlit](https://static.streamlit.io/badges/streamlit_badge_black_white.svg)](https://claimlens.streamlit.app)
-[![Live App](https://img.shields.io/badge/Live%20App-claimlens.streamlit.app-FF4B4B?logo=streamlit&logoColor=white)](https://claimlens.streamlit.app)
+[![Open in Streamlit](https://static.streamlit.io/badges/streamlit_badge_black_white.svg)](https://share.streamlit.io)
+[![Live Demo](https://img.shields.io/badge/Live%20Demo-Online%20Now-success?logo=cloudflare)](https://picture-optics-brothers-loans.trycloudflare.com)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
 
-> **Live Application**: Access ClaimLens directly on Streamlit Cloud at **[https://claimlens.streamlit.app](https://claimlens.streamlit.app)** (or **[https://ranjanaashish-claimlens.streamlit.app](https://ranjanaashish-claimlens.streamlit.app)**).
+> **Live Application**: Try ClaimLens immediately on the **[Live Web Demo](https://picture-optics-brothers-loans.trycloudflare.com)** (instant HTTPS access, zero authentication required, Gemini Vision pre-configured) or manage your instance directly in your **[Streamlit Cloud Dashboard](https://share.streamlit.io)**.
 
 ClaimLens is an enterprise-grade multimodal artificial intelligence platform designed for automated visual damage evaluation, agricultural and crop health inspection, property loss estimation, and policy-grounded insurance adjudication. Built on state-of-the-art Vision-Language Models (VLMs) and Retrieval-Augmented Generation (RAG), ClaimLens transforms unstructured visual inspections into verified, actionable engineering assessments.
 
@@ -197,19 +197,39 @@ Navigate to `http://localhost:8501` in your browser.
 
 ## Cloud & Container Deployment
 
-### 1. Streamlit Community Cloud (Live Application)
+### 1. Streamlit Community Cloud Deployment
 
-ClaimLens is live and deployed on Streamlit Community Cloud:
-- **Direct Live Application**: **[https://claimlens.streamlit.app](https://claimlens.streamlit.app)** (or **[https://ranjanaashish-claimlens.streamlit.app](https://ranjanaashish-claimlens.streamlit.app)**)
-- **Repository**: [`ranjanaashish/ClaimLens`](https://github.com/ranjanaashish/ClaimLens)
-- **Branch**: `main`
-- **Main file path**: `streamlit_app.py`
-3. *(Optional)* Expand **Advanced settings** -> **Secrets** to configure default environment variables:
-   ```toml
-   GEMINI_API_KEY = "your-api-key"
-   GEMINI_VLM_MODEL = "gemini-3.6-flash"
-   ```
-4. Click **Deploy!** — Streamlit Cloud will build from `requirements.txt` and launch your instance with `.streamlit/config.toml` settings.
+To host ClaimLens on Streamlit's official free cloud platform:
+
+1. **Sign in to Streamlit Cloud**:
+   Visit [share.streamlit.io](https://share.streamlit.io/) and log in with your GitHub account (`ranjanaashish`).
+
+2. **Verify Source Control Authorization**:
+   - In the Streamlit dashboard, click your avatar &rarr; **Settings** &rarr; **Linked accounts**.
+   - Ensure **GitHub (`ranjanaashish`)** shows as connected with repository access granted to `ClaimLens`.
+
+3. **Deploy the Repository**:
+   - Click **Create app** and configure:
+     - **Repository**: `ranjanaashish/ClaimLens`
+     - **Branch**: `main`
+     - **Main file path**: `streamlit_app.py`
+     - **App URL**: Enter an available unique subdomain (e.g., `ranjanaashish-claimlens.streamlit.app` or `claimlens-ai.streamlit.app`).
+
+4. **Configure Secrets**:
+   - Expand **Advanced settings** &rarr; **Secrets** and paste:
+     ```toml
+     GEMINI_API_KEY = "your-gemini-api-key"
+     GEMINI_VLM_MODEL = "gemini-3.6-flash"
+     VLM_BACKEND = "gemini"
+     ```
+
+5. **Launch**:
+   - Click **Deploy!** — Streamlit Cloud will install dependencies from `requirements.txt` and launch the app.
+
+> **Troubleshooting: "You do not have access to this app or it does not exist"**
+> If you encounter this message on Streamlit Cloud:
+> 1. **Subdomain Availability**: Generic subdomains like `claimlens` may already be registered by another user. Navigate to **App Settings** &rarr; **General** &rarr; **App URL** in your dashboard and choose an available name such as `ranjanaashish-claimlens` or `claimlens-ai`.
+> 2. **GitHub Account Linking**: If your Google email (`ranjanaashish914@gmail.com`) is not linked to your GitHub account (`ranjanaashish`), go to **Settings** &rarr; **Linked accounts** in Streamlit Cloud and authorize GitHub.
 
 > **Security & Credential Isolation**: Server API keys configured in Streamlit Cloud Secrets are executed strictly server-side. They are never rendered into HTML input elements, DOM nodes, or WebSocket client state. Visitors to your public app can interact seamlessly using the server-configured credentials, or optionally supply their own personal keys in the Settings modal without exposing host secrets.
 
