@@ -37,7 +37,7 @@ def test_chat_engine_rag_vlm():
     assert resp.type == 'assessment'
     assert resp.result is not None
     html = render_card(resp)
-    assert 'Domain Grounding' in html
+    assert 'Knowledge Sources' in html or 'Domain Grounding' in html
     print('    PASS (Assessment card rendered with structured RAG grounding)')
 
 if __name__ == '__main__':

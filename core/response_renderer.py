@@ -327,10 +327,11 @@ def render_assessment_card(response: ChatResponse) -> str:
 </div>""",
         ]
 
+    cards_rendered = "".join(cards_html)
     facts_figures_section = f"""<div class="cl-card-section">
-  <div class="cl-label">📊 Key Facts & Figures</div>
+  <div class="cl-section-label">Key Figures</div>
   <div class="cl-kpi-grid">
-    {''.join(cards_html)}
+    {cards_rendered}
   </div>
 </div>"""
 
@@ -445,11 +446,12 @@ def render_assessment_card(response: ChatResponse) -> str:
                 f'<div style="color:#94a3b8;font-size:11px;margin-top:2px;font-style:italic;">"{snip}"</div>'
                 f'</div>'
             )
+        cits_rendered = "".join(cits_items)
         rag_section = f"""<div class="cl-card-section">
-  <div class="cl-label">📚 Domain Grounding — Verified Knowledge Standards</div>
+  <div class="cl-section-label">Knowledge Sources</div>
   <details open style="margin-top:6px;cursor:pointer;">
-    <summary style="color:#60a5fa;font-size:12px;font-weight:500;">Grounded in {len(response.citations)} knowledge excerpts</summary>
-    <div style="margin-top:8px;">{''.join(cits_items)}</div>
+    <summary style="color:var(--accent);font-size:12px;font-weight:500;">Grounded in {len(response.citations)} knowledge excerpts</summary>
+    <div style="margin-top:8px;">{cits_rendered}</div>
   </details>
 </div>"""
 
@@ -488,10 +490,11 @@ def render_text_card(response: ChatResponse) -> str:
                 f'<div style="color:var(--text-muted);font-size:11px;margin-top:2px;font-style:italic;">"{snip}"</div>'
                 f'</div>'
             )
+        cits_rendered = "".join(cits_items)
         sources_html = (
             f'<details style="margin-top:12px;cursor:pointer;">'
             f'<summary style="color:var(--accent);font-size:12px;font-weight:500;">Grounded in {len(response.citations)} knowledge excerpts (expand)</summary>'
-            f'<div style="margin-top:8px;">{''.join(cits_items)}</div>'
+            f'<div style="margin-top:8px;">{cits_rendered}</div>'
             f'</details>'
         )
     elif response.sources:

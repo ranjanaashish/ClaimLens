@@ -133,7 +133,8 @@ def _run_vlm(
     if settings.get("enable_rag", True) and domain == "vehicle":
         try:
             from core.rag_agent import retrieve_context
-            rag_query = f"{' '.join(result.damage_codes or [])} {result.severity} {prompt}"
+            damage_str = " ".join(result.damage_codes or [])
+            rag_query = f"{damage_str} {result.severity} {prompt}"
             _, cits = retrieve_context(rag_query, top_k=3)
             rag_sources = [c.source for c in cits]
             rag_citations = [c.to_dict() for c in cits]
