@@ -7,11 +7,11 @@
 [![Fine-Tuning](https://img.shields.io/badge/DPO%20%2F%20SFT-Training%20Pipeline-purple.svg)](https://huggingface.co/docs/trl)
 [![CI](https://github.com/ranjanaashish/ClaimLens/actions/workflows/ci.yml/badge.svg)](https://github.com/ranjanaashish/ClaimLens/actions)
 [![Docker](https://img.shields.io/badge/Docker-Ready-2496ED.svg?logo=docker&logoColor=white)](Dockerfile)
-[![Streamlit Cloud](https://static.streamlit.io/badges/streamlit_badge_black_white.svg)](https://share.streamlit.io/)
-[![Deploy on Streamlit](https://img.shields.io/badge/Deploy-Streamlit%20Cloud-FF4B4B?logo=streamlit&logoColor=white)](https://share.streamlit.io/deploy?repository=ranjanaashish/ClaimLens&branch=main&mainModule=streamlit_app.py)
+[![Open in Streamlit](https://static.streamlit.io/badges/streamlit_badge_black_white.svg)](https://claimlens.streamlit.app)
+[![Live App](https://img.shields.io/badge/Live%20App-claimlens.streamlit.app-FF4B4B?logo=streamlit&logoColor=white)](https://claimlens.streamlit.app)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
 
-> **Live Deployment**: ClaimLens is deployed on **Streamlit Community Cloud** with zero-leak server-side secrets encryption. Replicate or launch your own instance with 1-click via **[Deploy to Streamlit Cloud](https://share.streamlit.io/deploy?repository=ranjanaashish/ClaimLens&branch=main&mainModule=streamlit_app.py)**.
+> **Live Application**: Access ClaimLens directly on Streamlit Cloud at **[https://claimlens.streamlit.app](https://claimlens.streamlit.app)** (or **[https://ranjanaashish-claimlens.streamlit.app](https://ranjanaashish-claimlens.streamlit.app)**).
 
 ClaimLens is an enterprise-grade multimodal artificial intelligence platform designed for automated visual damage evaluation, agricultural and crop health inspection, property loss estimation, and policy-grounded insurance adjudication. Built on state-of-the-art Vision-Language Models (VLMs) and Retrieval-Augmented Generation (RAG), ClaimLens transforms unstructured visual inspections into verified, actionable engineering assessments.
 
@@ -197,16 +197,13 @@ Navigate to `http://localhost:8501` in your browser.
 
 ## Cloud & Container Deployment
 
-### 1. Streamlit Community Cloud (Recommended & Free)
+### 1. Streamlit Community Cloud (Live Application)
 
-Deploy directly from your GitHub repository with zero infrastructure management:
-
-1. Navigate to [share.streamlit.io](https://share.streamlit.io/) and authenticate with your GitHub account (`ranjanaashish`).
-2. Click **Create app** and configure:
-   - **Repository**: `ranjanaashish/ClaimLens`
-   - **Branch**: `main`
-   - **Main file path**: `streamlit_app.py`
-   - **App URL**: `claimlens.streamlit.app` (or custom subdomain)
+ClaimLens is live and deployed on Streamlit Community Cloud:
+- **Direct Live Application**: **[https://claimlens.streamlit.app](https://claimlens.streamlit.app)** (or **[https://ranjanaashish-claimlens.streamlit.app](https://ranjanaashish-claimlens.streamlit.app)**)
+- **Repository**: [`ranjanaashish/ClaimLens`](https://github.com/ranjanaashish/ClaimLens)
+- **Branch**: `main`
+- **Main file path**: `streamlit_app.py`
 3. *(Optional)* Expand **Advanced settings** -> **Secrets** to configure default environment variables:
    ```toml
    GEMINI_API_KEY = "your-api-key"
