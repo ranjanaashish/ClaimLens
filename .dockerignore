@@ -1,0 +1,14 @@
+﻿.venv/
+venv/
+env/
+__pycache__/
+*.pyc
+*.pyo
+.git/
+.gitignore
+.env
+.env.local
+data/INS-MMBench/dataset/
+pip.ini
+*.log
+*.db-journal

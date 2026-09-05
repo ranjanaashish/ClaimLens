@@ -1,10 +1,13 @@
-﻿# ClaimLens: Multimodal Visual Assessment & Insurance Intelligence AI
+# ClaimLens: Multimodal Visual Assessment & Insurance Intelligence AI
 
 [![Python 3.10+](https://img.shields.io/badge/python-3.10+-blue.svg)](https://www.python.org/downloads/)
 [![Streamlit](https://img.shields.io/badge/Streamlit-1.40+-FF4B4B.svg)](https://streamlit.io/)
 [![Google Gemini](https://img.shields.io/badge/Gemini%20Vision-3.6%20Flash-4285F4.svg)](https://ai.google.dev/)
 [![RAG Grounding](https://img.shields.io/badge/FAISS-Vector%20Retrieval-green.svg)](https://github.com/facebookresearch/faiss)
 [![Fine-Tuning](https://img.shields.io/badge/DPO%20%2F%20SFT-Training%20Pipeline-purple.svg)](https://huggingface.co/docs/trl)
+[![CI](https://github.com/ranjanaashish/ClaimLens/actions/workflows/ci.yml/badge.svg)](https://github.com/ranjanaashish/ClaimLens/actions)
+[![Docker](https://img.shields.io/badge/Docker-Ready-2496ED.svg?logo=docker&logoColor=white)](Dockerfile)
+[![Deploy on Streamlit](https://static.streamlit.io/badges/streamlit_badge_black_white.svg)](https://share.streamlit.io/)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
 
 ClaimLens is an enterprise-grade multimodal artificial intelligence platform designed for automated visual damage evaluation, agricultural and crop health inspection, property loss estimation, and policy-grounded insurance adjudication. Built on state-of-the-art Vision-Language Models (VLMs) and Retrieval-Augmented Generation (RAG), ClaimLens transforms unstructured visual inspections into verified, actionable engineering assessments.
@@ -186,6 +189,50 @@ streamlit run streamlit_app.py
 ```
 
 Navigate to `http://localhost:8501` in your browser.
+
+---
+
+## Cloud & Container Deployment
+
+### 1. Streamlit Community Cloud (Recommended & Free)
+
+Deploy directly from your GitHub repository with zero infrastructure management:
+
+1. Navigate to [share.streamlit.io](https://share.streamlit.io/) and authenticate with your GitHub account (`ranjanaashish`).
+2. Click **Create app** and configure:
+   - **Repository**: `ranjanaashish/ClaimLens`
+   - **Branch**: `main`
+   - **Main file path**: `streamlit_app.py`
+   - **App URL**: `claimlens.streamlit.app` (or custom subdomain)
+3. *(Optional)* Expand **Advanced settings** -> **Secrets** to configure default environment variables:
+   ```toml
+   GEMINI_API_KEY = "your-api-key"
+   GEMINI_VLM_MODEL = "gemini-3.6-flash"
+   ```
+4. Click **Deploy!** — Streamlit Cloud will build from `requirements.txt` and launch your instance with `.streamlit/config.toml` settings.
+
+### 2. Docker Container Deployment
+
+ClaimLens includes a production-ready `Dockerfile` and `.dockerignore`:
+
+```bash
+# Build the Docker image
+docker build -t claimlens:latest .
+
+# Run containerized on port 8501
+docker run -d -p 8501:8501 \
+  -e GEMINI_API_KEY="your-api-key" \
+  --name claimlens-app \
+  claimlens:latest
+```
+
+Compatible with **Render**, **Railway**, **Fly.io**, **AWS ECS**, and **Google Cloud Run**.
+
+### 3. Hugging Face Spaces
+
+1. Create a new Space at [huggingface.co/new-space](https://huggingface.co/new-space).
+2. Select **Streamlit** (or **Docker**) as the Space SDK.
+3. Link your GitHub repository (`ranjanaashish/ClaimLens`) or mirror the repo.
 
 ---
 
