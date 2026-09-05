@@ -26,6 +26,24 @@ from core.response_renderer import (
 )
 from core.schema import DAMAGE_CODES, Persona, Severity
 
+# Load .env if present
+env_file = Path(__file__).parent.parent / ".env"
+if env_file.exists():
+    for line in env_file.read_text(encoding="utf-8").splitlines():
+        line = line.strip()
+        if line and not line.startswith("#") and "=" in line:
+            k, v = line.split("=", 1)
+            os.environ.setdefault(k.strip(), v.strip())
+
+# Sync st.secrets into os.environ if present
+try:
+    if hasattr(st, "secrets"):
+        for k, v in st.secrets.items():
+            if isinstance(v, (str, int, float)):
+                os.environ.setdefault(str(k), str(v))
+except Exception:
+    pass
+
 # ---------------------------------------------------------------------------
 # Session-state initialisation
 # ---------------------------------------------------------------------------

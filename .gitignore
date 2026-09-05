@@ -1,4 +1,4 @@
-﻿# Byte-compiled / optimized / DLL files
+# Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
 *$py.class
@@ -42,3 +42,5 @@ data/INS-MMBench/repo/.git/
 pip.ini
 *.log
 *.db-journal
+*.exe
+cloudflared*

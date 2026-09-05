@@ -42,6 +42,15 @@ if env_file.exists():
             k, v = line.split("=", 1)
             os.environ.setdefault(k.strip(), v.strip())
 
+# Sync st.secrets into os.environ if present
+try:
+    if hasattr(st, "secrets"):
+        for k, v in st.secrets.items():
+            if isinstance(v, (str, int, float)):
+                os.environ.setdefault(str(k), str(v))
+except Exception:
+    pass
+
 # ---------------------------------------------------------------------------
 # Global session-state defaults
 # ---------------------------------------------------------------------------
